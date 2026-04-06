@@ -49,8 +49,9 @@
             </div>
 
             <div class="hero-content-right">
-                <div id="ai-chat-wrapper" class="glass-card">
-                    <iframe src="chat-embed.html" style="width:100%; height:100%; border:none; border-radius:16px;"></iframe>
+                <div id="ai-chat-wrapper" class="glass-card" style="padding:0; overflow:hidden;">
+                    <!-- CSS Filter 魔法：反相 + 恢复色相，强制白底变黑底 -->
+                    <iframe src="chat-embed.html" style="width:100%; height:100%; border:none; border-radius:16px; filter: invert(0.9) hue-rotate(180deg); mix-blend-mode: screen;"></iframe>
                 </div>
             </div>
             
