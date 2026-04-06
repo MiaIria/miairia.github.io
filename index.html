@@ -242,5 +242,26 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Coze Web SDK -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: '7621543304194244660',
+          },
+          componentProps: {
+            title: 'yuntian.huang的AI私人助理',
+          },
+          // 必须使用 token 认证。请在 Coze 个人设置中生成一个 Personal Access Token 并替换下方 pat_********
+          auth: {
+            type: 'token',
+            token: 'pat_MDmM6uEGmFUgVTYHwJ4Afhkon76aLAAb4AlamR0QzzrsGaXIX5Gw87wjBstaGWGG',
+            onRefreshToken: function () {
+              return 'pat_MDmM6uEGmFUgVTYHwJ4Afhkon76aLAAb4AlamR0QzzrsGaXIX5Gw87wjBstaGWGG';
+            }
+          }
+        });
+    </script>
 </body>
 </html>
