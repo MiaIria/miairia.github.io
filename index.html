@@ -31,19 +31,27 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section fade-in">
-            <div class="profile-container">
-                <div class="profile-glow"></div>
-                <!-- Local image copy -->
-                <img src="证件照.png" alt="Profile" class="profile-image">
+            <div class="hero-content-left">
+                <div class="profile-container">
+                    <div class="profile-glow"></div>
+                    <!-- Local image copy -->
+                    <img src="证件照.png" alt="Profile" class="profile-image">
+                </div>
+                
+                <h1 class="greeting">
+                    <span id="typewriter">你好，这里是黄运添的私人频道</span><span class="cursor">|</span>
+                </h1>
+                
+                <div class="tags-container">
+                    <span class="glass-pill tag-pm"><i class="fas fa-magic"></i> AI产品经理</span>
+                    <span class="glass-pill tag-trainer"><i class="fas fa-bolt"></i> AI训练师</span>
+                </div>
             </div>
-            
-            <h1 class="greeting">
-                <span id="typewriter">你好，这里是黄运添的私人频道</span><span class="cursor">|</span>
-            </h1>
-            
-            <div class="tags-container">
-                <span class="glass-pill tag-pm"><i class="fas fa-magic"></i> AI产品经理</span>
-                <span class="glass-pill tag-trainer"><i class="fas fa-bolt"></i> AI训练师</span>
+
+            <div class="hero-content-right">
+                <div id="ai-chat-wrapper" class="glass-card">
+                    <iframe src="chat-embed.html" style="width:100%; height:100%; border:none; border-radius:16px;"></iframe>
+                </div>
             </div>
             
             <div class="scroll-indicator">
@@ -53,6 +61,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- Prologue Section ... (unchanged) -->
 
         <!-- 序章 Prologue Section -->
         <section id="prologue" class="section fade-in">
@@ -242,26 +252,5 @@
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- Coze Web SDK -->
-    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
-    <script>
-        new CozeWebSDK.WebChatClient({
-          config: {
-            bot_id: '7621543304194244660',
-          },
-          componentProps: {
-            title: 'yuntian.huang的AI私人助理',
-          },
-          // 必须使用 token 认证。请在 Coze 个人设置中生成一个 Personal Access Token 并替换下方 pat_********
-          auth: {
-            type: 'token',
-            token: 'pat_MDmM6uEGmFUgVTYHwJ4Afhkon76aLAAb4AlamR0QzzrsGaXIX5Gw87wjBstaGWGG',
-            onRefreshToken: function () {
-              return 'pat_MDmM6uEGmFUgVTYHwJ4Afhkon76aLAAb4AlamR0QzzrsGaXIX5Gw87wjBstaGWGG';
-            }
-          }
-        });
-    </script>
 </body>
 </html>
