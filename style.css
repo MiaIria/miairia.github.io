@@ -852,10 +852,4 @@ main {
         padding: 0 1rem;
     }
 }
-
-/* Ensure Coze SDK header is always below our nav and higher z-index */
-.coze-chat-widget-container {
-    top: 80px !important;
-    height: calc(100% - 80px) !important;
-    z-index: 9999 !important;
-}
+

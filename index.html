@@ -271,6 +271,33 @@
             }
           }
         });
+
+        // 强行平移智能体窗口的脚本
+        (function() {
+            const OFFSET = 80; // 避开 70px 的导航栏，多留 10px 间距
+            
+            function forceStyle() {
+                const container = document.querySelector('.coze-chat-widget-container');
+                if (container) {
+                    // 如果已经设置了正确的 top，就跳过，避免死循环
+                    if (container.style.top === OFFSET + 'px') return;
+                    
+                    container.style.setProperty('top', OFFSET + 'px', 'important');
+                    container.style.setProperty('height', `calc(100% - ${OFFSET}px)`, 'important');
+                    container.style.setProperty('z-index', '9999', 'important');
+                }
+            }
+
+            // 1. 初始尝试
+            setInterval(forceStyle, 500);
+
+            // 2. 监听 DOM 变化，防止 SDK 在打开/关闭动画时重置样式
+            const observer = new MutationObserver((mutations) => {
+                forceStyle();
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+        })();
     </script>
 </body>
 </html>
