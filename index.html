@@ -252,10 +252,15 @@
           },
           componentProps: {
             title: 'yuntian.huang的AI私人助理',
-            layout: 'pc',
           },
           ui: {
-            asstBtn: { isNeed: true },
+            asstBtn: {
+              isNeed: true, // 确保右下角悬浮球存在
+            },
+            header: {
+              isShow: true,
+              isNeedClose: true, // 确保右上角有关闭/收起按钮
+            },
           },
           // 必须使用 token 认证。请在 Coze 个人设置中生成一个 Personal Access Token 并替换下方 pat_********
           auth: {
